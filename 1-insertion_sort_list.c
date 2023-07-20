@@ -3,7 +3,7 @@
 /**
  * insertion_sort_list_helper - Goes through a doubly linked list backwards
  * starting from node `next_node`, and swaps it if a previous node has
- * a lesser n field value.
+ * a greater n field value.
  * @list: pointer to a doubly linked list of integers to be sorted
  * @next_node: node swapped with current and starting point of backward loop
  *
