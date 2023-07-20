@@ -2,8 +2,8 @@
 #include "sort.h"
 
 /**
- * bubble_sort - Sorts array of integers `array` in ascending order.
- *	Prints the array each time two elements are swapped.
+ * bubble_sort - Sorts array of integers in ascending order using the
+ * Bubble sort algorithm. Prints the array each time two elements are swapped.
  * @array: array of integers to be sorted
  * @size: size of array
  *
@@ -13,7 +13,7 @@ void bubble_sort(int *array, size_t size)
 	size_t i, swapped;
 	int temp;
 
-	if (!array)
+	if (!array || size == 0)
 		return;
 
 	do {
