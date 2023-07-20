@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "sort.h"
 
 /**
@@ -41,7 +40,7 @@ void insertion_sort_list_helper(listint_t **list, listint_t *next_node)
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *current_node, *next_node/* , *prev_node */;
+	listint_t *current_node, *next_node;
 	int swapped;
 
 	if (!list || !(*list))
