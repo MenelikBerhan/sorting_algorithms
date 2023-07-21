@@ -1,13 +1,12 @@
 #include "sort.h"
-#include <stdio.h>
 
 /**
- * foreward_swap - a helper function to handle swap while going forward
+ * forward_swap - a helper function to handle swap while going forward
  * @list: pointer to a doubly linked list of integers to be sorted
  * @current: pointer to the current node being swapped forward
  *
 */
-void foreward_swap(listint_t **list, listint_t *current)
+void forward_swap(listint_t **list, listint_t *current)
 {
 	listint_t *next_node;
 
@@ -78,7 +77,7 @@ void cocktail_sort_list(listint_t **list)
 			if (frwrd && current->n > (current->next)->n)
 			{
 				swapped = swapped_bfr = 1;
-				foreward_swap(list, current);
+				forward_swap(list, current);
 			}
 			if (!frwrd && current->n < (current->prev)->n)
 			{
