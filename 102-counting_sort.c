@@ -1,5 +1,5 @@
 #include "sort.h"
-
+#include <stdio.h>
 /**
  * counting_sort - sorts an array of integers in ascending order using the
  * Counting sort algorithm. Prints the counting array once it is set up.
@@ -32,16 +32,11 @@ void counting_sort(int *array, size_t size)
 	output = malloc(sizeof(int) * size);
 	if (!output)
 		exit(EXIT_FAILURE);
+
 	for (i = 0; i < size; i++)
-		output[i] = -1;
-	for (i = 0; i <= max; i++)
 	{
-		while (count[i])
-		{
-			if (output[count[i] - 1] == -1)
-				output[count[i] - 1] = i;
-			count[i] -= 1;
-		}
+		count[array[i]] -= 1;
+		output[count[array[i]]] = array[i];
 	}
 	for (i = 0; i < size; i++)
 		array[i] = output[i];
