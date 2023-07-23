@@ -10,13 +10,13 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	int interval = 0, current, prev, len = size;
-	int temp, start_index;
+	size_t interval = 0, current, prev, start_index;
+	int temp;
 
-	if (!array || size == 0)
+	if (!array || size < 2)
 		return;
 
-	while (interval <= len - 1)
+	while (interval <= size - 1)
 		interval = interval * 3 + 1;
 	interval = (interval - 1) / 3;
 	while (interval > 0)
@@ -24,7 +24,7 @@ void shell_sort(int *array, size_t size)
 		for (start_index = 0; start_index < interval; start_index++)
 		{
 			current = start_index;
-			while (current + interval < len)
+			while (current + interval < size)
 			{
 				if (array[current] > array[current + interval])
 				{
@@ -33,7 +33,7 @@ void shell_sort(int *array, size_t size)
 					array[current + interval] = temp;
 
 					prev = current;
-					while (prev - interval >= 0 && array[prev] < array[prev - interval])
+					while (prev >= interval && array[prev] < array[prev - interval])
 					{
 						temp = array[prev];
 						array[prev] = array[prev - interval];
