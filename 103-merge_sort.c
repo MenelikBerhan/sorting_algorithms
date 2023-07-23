@@ -64,5 +64,7 @@ void merge_sort_helper(int *arr, size_t l, size_t r)
  */
 void merge_sort(int *array, size_t size)
 {
+	if (!array || size == 0)
+		return;
 	merge_sort_helper(array, 0, size - 1);
 }
