@@ -2,7 +2,7 @@
 
 /**
  * partition - partitions the array with the last element as a pivot
- * using Lomuto partitoning scheme.
+ * using Lomuto's partitoning scheme.
  * @array: array of integers to be sorted
  * @low: index of range start
  * @high: index of range end
@@ -71,7 +71,7 @@ void q_sort(int *array, int low, int high, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	if (!array || size == 0)
+	if (!array || size < 2)
 		return;
 	q_sort(array, 0, size - 1, size);
 }
