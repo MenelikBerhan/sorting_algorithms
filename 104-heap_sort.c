@@ -1,5 +1,11 @@
 #include "sort.h"
 
+/**
+ * heapify - builds a heap from a given array
+ * @arr: array to be sorted
+ * @size: size of array
+ * @i: index of the root node
+ */
 void heapify(int *arr, size_t size, size_t i){};
 
 /**
