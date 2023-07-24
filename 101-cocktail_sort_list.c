@@ -64,7 +64,7 @@ void cocktail_sort_list(listint_t **list)
 	int swapped, swapped_bfr, frwrd = 1;
 	listint_t *current;
 
-	if (!list || !(*list))
+	if (!list || !(*list) || !(*list)->next)
 		return;
 	current = *list;
 	do {

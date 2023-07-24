@@ -119,7 +119,7 @@ a function that sorts a deck of cards.
   - From `Ace` to `King`
   - From `Spades` to `Diamonds`
 
-## __Contributers__
+## __Contributors__
 
 - [__Toby Salau__](https://github.com/Toby2507)
 - __Girma Eshete__

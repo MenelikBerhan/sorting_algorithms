@@ -43,7 +43,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *current_node, *next_node;
 	int swapped;
 
-	if (!list || !(*list))
+	if (!list || !(*list) || !(*list)->next)
 		return;
 
 	current_node = *list;

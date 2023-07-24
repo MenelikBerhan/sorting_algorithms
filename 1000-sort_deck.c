@@ -45,7 +45,7 @@ void sort_deck(deck_node_t **deck)
 	int i;
 	deck_node_t *temp, *array[52];
 
-	if (!deck || !(*deck))
+	if (!deck || !(*deck) || !(*deck)->next)
 		return;
 	temp = *deck;
 	for (i = 0; i < 52; i++)
