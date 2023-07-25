@@ -8,42 +8,32 @@
  * @high: index of range end
  * @size: size of array
  *
- * Return: the index where the pivot is at
+ * Return: the index where the array is partitioned at
 */
 int partition(int *array, int low, int high, size_t size)
 {
-	int pivot, i, j, temp;
+	int pivot = array[high];
+	int i = low - 1, j = high + 1, temp;
 
-	pivot = high;
-	i = low;
-	j = high;
-	while (j >= i)
+	while (1)
 	{
-		while (array[i] <= array[pivot] && i < high)
+		do {
 			i++;
-		while (array[j] > array[pivot] && j >= low)
+		} while (array[i] < pivot);
+
+		do {
 			j--;
-		if (i == pivot || (j == pivot && j != high))
-			return (pivot);
+		} while (array[j] > pivot);
 
-		if (j > i && array[i] > array[j])
-		{
-			temp = array[i];
-			array[i] = array[j];
-			array[j] = temp;
-			if (j == pivot)
-				pivot = i;
-			if (i < high)
-				i++;
-			if (j >= 1)
-				j--;
-			print_array(array, size);
-		}
+		if (i > j)
+			return (j);
+		if (i == j)
+			return (j - 1);
+		temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
+		print_array(array, size);
 	}
-	if (array[pivot] > array[j])
-		pivot = -j;
-
-	return (pivot);
 }
 
 /**
@@ -59,13 +49,13 @@ void q_sort(int *array, int low, int high, size_t size)
 {
 	int p;
 
-	if (low >= high || low < 0)
+	if (high - low <= 0)
 		return;
 
 	p = partition(array, low, high, size);
 
-	q_sort(array, low, (p < 0 ? -p : p - 1), size);
-	q_sort(array, (p < 0 ? (-p + 1) : p + 1), high, size);
+	q_sort(array, low, p, size);
+	q_sort(array, p + 1, high, size);
 }
 
 /**
