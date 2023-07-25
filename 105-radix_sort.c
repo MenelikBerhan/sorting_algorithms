@@ -10,7 +10,7 @@ void radix_sort(int *array, size_t size)
 {
 	int *count, *output, max = 0, i, exp;
 
-	if (!array || size == 0)
+	if (!array || size < 2)
 		return;
 	count = malloc(sizeof(int) * 10);
 	output = malloc(sizeof(int) * size);
